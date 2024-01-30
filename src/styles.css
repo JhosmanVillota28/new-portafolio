@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    color-scheme: light dark;
+}
+
+body::-webkit-scrollbar {
+    width: 4px;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #D1D1D1;
+    /* color of the scroll thumb */
+    border-radius: 12px;
+    /* roundness of the scroll thumb */
+    border: 1px solid #D1D1D1;
+    /* creates padding around scroll thumb */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* scroll-timeline: none inline; */
+    font-family: 'Montserrat Variable', system-ui, sans-serif;
+    /* font-family: 'Lato', system-ui, sans-serif; */
+}
+
+body {
+    overscroll-behavior: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+#header-nav {
+    animation: blur linear both 0.5s;
+    animation-timeline: scroll();
+    animation-range: 0 500px;
+}
+
+
+.animar {
+    /* animation: cargar .8s; */
+    animation: cargar-2 .3s;
+}
+
+@keyframes cargar-2 {
+    from {
+        opacity: 0;
+        transform: translateY(-120%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}

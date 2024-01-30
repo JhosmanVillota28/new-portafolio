@@ -1,0 +1,29 @@
+<nav
+    class="w-full flex-wrap border-slate-600/60 items-center flex align-middle dark:backdrop-blur-2xl lg:flex-nowrap lg:min-h-screen my-0 p-3 lg:p-5 border-b lg:border-e">
+    <div class="w-screen lg:hidden">
+        <button class="p-1.5 bg-indigo-500/50 rounded-md" (click)="toggleMenu()">
+            <strong>
+                <i class="bi bi-list"></i>
+                {{ isMenuOpen ? 'Ocultar' : 'Mostrar' }} secciones
+            </strong>
+        </button>
+    </div>
+    <div *ngIf="isMenuOpen" class="animar">
+        @for (item of navItems; track $index) {
+        <div class="my-4 ms-2 p-2 hover:border-s-4 hover:bg-indigo-500/40 hover:shadow-lg transition ease-in hover:shadow-indigo-500/50"
+            (click)="redireccionar(item.url)"
+            [ngClass]="{'border-s-4 bg-indigo-500/40 shadow-lg transition ease-in shadow-indigo-500/50': urlActive == item.url}">
+            <a [ariaLabel]="item.label" [href]="item.url" class="enlaces font-medium capitalize">{{ item.title }}</a>
+        </div>
+        }
+    </div>
+    <div class="hidden lg:block">
+        @for (item of navItems; track $index) {
+        <div class="my-4 ms-2 p-2 hover:border-s-4 hover:bg-indigo-500/40 hover:shadow-lg transition ease-in hover:shadow-indigo-500/50"
+            (click)="redireccionar(item.url)"
+            [ngClass]="{'border-s-4 bg-indigo-500/40 shadow-lg transition ease-in shadow-indigo-500/50': urlActive == item.url}">
+            <a [ariaLabel]="item.label" [href]="item.url" class="enlaces font-medium capitalize">{{ item.title }}</a>
+        </div>
+        }
+    </div>
+</nav>

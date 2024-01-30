@@ -1,0 +1,12 @@
+<section class="mb-32" id="conocimientos">
+    <p class="text-4xl font-semibold mb-6 text-black/80 dark:text-white/80">
+        <i class="bi bi-cloud"></i>
+        Conocimientos
+    </p>
+    <article class="w-full border border-white/50 rounded-md p-5">
+        <div class="flex flex-wrap gap-2">
+            <shared-badge *ngFor="let tag of knowledge | keyvalue" [svg]="tag.value.icon"
+                [texto]="tag.value.name"></shared-badge>
+        </div>
+    </article>
+</section>

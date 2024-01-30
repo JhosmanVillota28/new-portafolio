@@ -1,0 +1,22 @@
+<section class="mb-28" id="educacion">
+    <p class="text-4xl font-semibold mb-6 text-black/80 dark:text-white/80">
+        <i class="bi bi-book"></i>
+        Educación
+    </p>
+    <ol class="relative border-s border-white ml-3">
+        <li class="mb-10 ms-4" *ngFor="let education of educationHistory">
+            <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-white bg-sky-500">
+            </div>
+            <time class="mb-1 text-md font-semibold leading-none text-sky-800 dark:text-sky-500">
+                {{ education.date }}
+            </time>
+            <h3 class="text-2xl font-semibold text-balance text-indigo-500 dark:text-indigo-500 mt-2">
+                {{ education.title }}
+            </h3>
+            <p class="text-base font-normal dark:text-gray-200 text-balance">
+                {{ education.institution }},
+                <span class="text-gray-400 text-sm font-medium"> {{ education.city }}</span>
+            </p>
+        </li>
+    </ol>
+</section>

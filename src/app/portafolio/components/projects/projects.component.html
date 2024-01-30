@@ -1,0 +1,30 @@
+<section class="mb-24" id="proyectos">
+    <p class="text-4xl mb-4 font-semibold text-black/80 dark:text-white/80">
+        <i class="bi bi-code"></i>
+        Proyectos
+    </p>
+    <article class="mb-14" *ngFor="let project of projects">
+        <h3 class="text-2xl font-semibold text-indigo-800 dark:text-indigo-500">
+            {{ project.title }}
+        </h3>
+        <p class="my-2" *ngIf="project.subtitle">
+            <strong class="rounded-md p-1 text-white dark:text-white"
+                [ngClass]="{'bg-green-500 dark:bg-green-500': project.subtitle == 'En funcionamiento', 'bg-red-500 dark:bg-red-500': project.subtitle == 'En publicación'}">{{
+                project.subtitle }}</strong>
+        </p>
+        <p class="text-base text-pretty md:text-lg mb-4 md:text-balance">{{ project.description }}</p>
+        <ul class="my-4 flex gap-2 flex-row flex-wrap">
+            <li *ngFor="let tag of project.tags">
+                <shared-badge [svg]="tag.icon" [texto]="tag.name"></shared-badge>
+            </li>
+        </ul>
+        <img class="rounded shadow-2xl shadow-white/30 w-full" [src]="project.image"
+            [alt]="'Captura de pantalla del proyecto' + project.title" loading="lazy">
+        <footer class="mt-4" *ngIf="project.link">
+            <a [href]="project.link" target="_blank" class="p-2 dark:bg-slate-400/45 hover:bg-slate-400/20 transition-colors rounded-lg">
+                <i class="bi bi-globe2"></i>
+                Visitar Sitio Web
+            </a>
+        </footer>
+    </article>
+</section>
