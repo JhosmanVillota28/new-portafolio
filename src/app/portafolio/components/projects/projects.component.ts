@@ -94,7 +94,7 @@ export class ProjectsComponent {
         },
         {
             title: "Shortener - Acortador de URLs",
-            subtitle: "En publicación",
+            subtitle: "En funcionamiento",
             description:
                 "Plataforma web creada para recortar y redireccionar URLs mediante URL o codigo QR. Creada de inicio a fin utilizando las tecnologias de Laravel, PHP, Angular y Bootstrap.",
             link: "https://shortener-urls-hx1u.vercel.app/",

@@ -6,16 +6,15 @@ import { RouterModule } from '@angular/router';
 import { BadgeComponent } from './components/badge/badge.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-
 @NgModule({
     declarations: [
         NavBarComponent,
         BadgeComponent,
-        FooterComponent
+        FooterComponent,
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
     ],
     exports: [
         NavBarComponent,

@@ -7,7 +7,6 @@ import { CommonModule } from '@angular/common';
 
 import { SharedModule } from './shared/shared.module';
 
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -16,7 +15,6 @@ import { SharedModule } from './shared/shared.module';
         CommonModule,
         BrowserModule,
         AppRoutingModule,
-
         HttpClientModule,
     ],
     providers: [],
